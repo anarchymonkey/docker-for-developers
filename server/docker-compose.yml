@@ -1,0 +1,21 @@
+version: "1"
+services:
+  app:
+    container_name: users-app
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres
+    volumes:
+      - ./data:/data/db
+    environment:
+      POSTGRES_DB: url_shortner
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Batsy!1996
+    ports:
+      - "5432:5432"
