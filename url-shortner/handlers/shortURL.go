@@ -107,7 +107,7 @@ func GenerateShortURL(g *gin.Context, db *gorm.DB) {
 		shortenedUrls := ShortenedUrls{}
 		db.First(&shortenedUrls, "longurl = ?", shortUrlInsert.Longurl)
 		g.IndentedJSON(http.StatusOK, gin.H{
-			"message": fmt.Sprintf("your generated short url is: %s", shortenedUrls.Shorturl),
+			"shortURL": fmt.Sprintf("http://localhost:8080/%s", shortenedUrls.Shorturl),
 		})
 		return
 	}

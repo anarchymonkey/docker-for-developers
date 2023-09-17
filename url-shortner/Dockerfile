@@ -1,6 +1,6 @@
 FROM golang
 
-WORKDIR /server/url-shortner
+WORKDIR /app
 
 COPY go.mod go.sum ./
 
