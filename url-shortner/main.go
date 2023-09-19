@@ -40,7 +40,7 @@ func main() {
 
 	router.Use(corsMiddleWare())
 
-	db, err := database.Connect(getDatabaseConfig("url_shortner"))
+	db, err := database.Connect(getDatabaseConfig("url_shortener"))
 
 	if err != nil {
 		fmt.Errorf("Error while initializing database connection")

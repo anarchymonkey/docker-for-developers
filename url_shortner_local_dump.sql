@@ -5,9 +5,15 @@
 -- Dumped from database version 15.2
 -- Dumped by pg_dump version 15.2
 
--- Started on 2023-09-17 14:43:41
+-- Started on 2023-09-19 07:08:55
 
-create database url_shortner;
+CREATE DATABASE url_shortener;
+
+-- Connect to the 'url_shortener' database
+\c url_shortener;
+
+-- Set up the search path within the 'url_shortener' database
+SET search_path = public;
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -139,7 +145,7 @@ ALTER TABLE ONLY public.shortened_urls
 CREATE TRIGGER set_timestamp BEFORE UPDATE ON public.shortened_urls FOR EACH ROW EXECUTE FUNCTION public.trigger_set_timestamp();
 
 
--- Completed on 2023-09-17 14:43:41
+-- Completed on 2023-09-19 07:08:55
 
 --
 -- PostgreSQL database dump complete
